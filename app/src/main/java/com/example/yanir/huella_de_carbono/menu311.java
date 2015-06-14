@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.Vector;
 
 
@@ -23,6 +25,7 @@ LinearLayout ll_elSwipe;
 int indice;
 Tips tips;
 Vector<String> vector_tips = new Vector<String>();
+TextView tv_superior;
 
 
     @Override
@@ -34,7 +37,10 @@ Vector<String> vector_tips = new Vector<String>();
         tips = new Tips();
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
         tv_tips = (TextView) findViewById(R.id.textview_tips);
+        tv_superior = (TextView) findViewById(R.id.superior_textView);
         tv_tips.setTypeface(myTypeface);
+        tv_superior.setTypeface(myTypeface);
+
         iv_tipo = (ImageView) findViewById(R.id.imageView_tipo);
         tipo=bundle.getInt("tipo");
         setearPorTipo(tipo);
@@ -119,6 +125,20 @@ Vector<String> vector_tips = new Vector<String>();
                 vector_tips = tips.agregarTips(6);
                 tv_tips.setText(vector_tips.elementAt(0));
                 break;
+            case 7:
+                System.out.println("ENTRE AQUI");
+                iv_tipo.setImageResource(R.drawable.ic_transparente);
+                tv_superior.setText("¿Que es la Huella de Carbono?");
+                vector_tips = tips.agregarTips(7);
+                tv_tips.setText(vector_tips.elementAt(0));
+                break;
+            case 8:
+                iv_tipo.setImageResource(R.drawable.ic_transparente);
+                tv_superior.setText("¿Como se calcula?");
+                vector_tips = tips.agregarTips(8);
+                tv_tips.setText(vector_tips.elementAt(0));
+                break;
+
         }
 
 

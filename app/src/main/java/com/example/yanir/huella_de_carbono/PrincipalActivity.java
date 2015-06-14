@@ -2,36 +2,41 @@ package com.example.yanir.huella_de_carbono;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
 
-public class menu3 extends Activity implements View.OnClickListener {
+public class PrincipalActivity extends Activity implements View.OnClickListener {
 
-    Button b_como;
-    Button b_que;
-    Button b_tips;
+    private Button boton1;
+    private Button boton2;
+    private Button boton3;
+    private Button boton4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu3);
-        b_como = (Button) findViewById(R.id.como_boton);
-        b_como.setOnClickListener(this);
-        b_que = (Button) findViewById(R.id.que_boton);
-        b_que.setOnClickListener(this);
-        b_tips = (Button) findViewById(R.id.tips_boton);
-        b_tips.setOnClickListener(this);
+        setContentView(R.layout.activity_main);
+        boton1 = (Button)findViewById(R.id.button1);
+        boton1.setOnClickListener(this);
+        boton2 = (Button)findViewById(R.id.button2);
+        boton2.setOnClickListener(this);
+        boton3 = (Button)findViewById(R.id.button3);
+        boton3.setOnClickListener(this);
+        boton4 = (Button)findViewById(R.id.button4);
+        boton4.setOnClickListener(this);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_menu3, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -50,26 +55,32 @@ public class menu3 extends Activity implements View.OnClickListener {
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public void onClick(View v) {
+
         switch (v.getId()){
-            case (R.id.como_boton):
-                Intent i = new Intent(this, menu311.class);
-                i.putExtra("tipo",7);
-                startActivity(i);
-            break;
+            case R.id.button1:
 
-            case (R.id.que_boton):
-                Intent j = new Intent(this, menu311.class);
-                j.putExtra("tipo",8);
-                startActivity(j);
-            break;
 
-            case (R.id.tips_boton):
-                Intent k = new Intent(this, menu31.class);
-                startActivity(k);
-            break;
+                break;
+            case R.id.button2:
+
+
+                break;
+            case R.id.button3:
+                Intent intent = new Intent(this, menu3.class);
+                startActivity(intent);
+
+                break;
+            case R.id.button4:
+
+
+                break;
+
+
 
         }
+
     }
 }

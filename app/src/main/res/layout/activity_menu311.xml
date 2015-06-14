@@ -47,6 +47,19 @@
                     android:id="@+id/imageView_tipo"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_maps_directions_car" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/superior_textView"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:textColor="@color/fondo_menu"
+                    android:ellipsize="middle"
+                    android:gravity="top|center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp" />
             </FrameLayout>
 
             <LinearLayout
