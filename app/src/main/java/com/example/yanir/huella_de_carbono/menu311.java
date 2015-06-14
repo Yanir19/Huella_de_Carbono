@@ -11,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.Vector;
 
 
@@ -23,7 +21,7 @@ ImageView iv_tipo;
 int tipo;
 LinearLayout ll_elSwipe;
 int indice;
-Tips tips;
+com.example.yanir.huella_de_carbono.tips tips;
 Vector<String> vector_tips = new Vector<String>();
 TextView tv_superior;
 
@@ -34,7 +32,7 @@ TextView tv_superior;
         setContentView(R.layout.activity_menu311);
         Bundle bundle = getIntent().getExtras();
         indice = 0;
-        tips = new Tips();
+        tips = new com.example.yanir.huella_de_carbono.tips();
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
         tv_tips = (TextView) findViewById(R.id.textview_tips);
         tv_superior = (TextView) findViewById(R.id.superior_textView);
