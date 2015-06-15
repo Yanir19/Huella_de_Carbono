@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CarbonFootPrint</string>
+    <string name="app_name">Huella_de_Carbono</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -7,4 +7,6 @@
     <string name="title_activity_menu311">menu311</string>
     <string name="title_activity_manu311_prueba2">manu311Prueba2</string>
     <string name="title_activity_login">Login</string>
+    <string name="title_activity_calculadora">Calculadora</string>
+    <string name="title_activity_ejemplo">ejemplo</string>
 </resources>
