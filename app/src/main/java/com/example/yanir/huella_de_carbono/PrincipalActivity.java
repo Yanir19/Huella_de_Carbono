@@ -17,6 +17,7 @@ public class PrincipalActivity extends Activity implements View.OnClickListener 
     private Button boton2;
     private Button boton3;
     private Button boton4;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,14 +63,34 @@ public class PrincipalActivity extends Activity implements View.OnClickListener 
         switch (v.getId()){
             case R.id.button1:
 
+                Manejador_BD BD;
+                BD = new Manejador_BD(this);
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Hogar','Electricidad','0.5');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Gasolina','Pequeño','0.15991');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Gasolina','Mediano','0.20018');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Gasolina','Grande','0.28944');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Diesel','Pequeño','0.14519');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Diesel','Mediano','0.17538');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Diesel','Grande','0.22867');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Moto','Pequeño','0.08499');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Moto','Mediano','0.10316');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Moto','Grande','0.0.13724');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Taxi','estandar','0.17625');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Autobus','estandar','0.10067');");
+                BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Metro','estandar','0.035645');");
+
+                intent = new Intent(this, Calculo_de_huella.class);
+                startActivity(intent);
 
                 break;
+
             case R.id.button2:
 
 
                 break;
             case R.id.button3:
-                Intent intent = new Intent(this, menu3.class);
+
+                intent = new Intent(this, menu3.class);
                 startActivity(intent);
 
                 break;
@@ -83,4 +104,6 @@ public class PrincipalActivity extends Activity implements View.OnClickListener 
         }
 
     }
+
+
 }

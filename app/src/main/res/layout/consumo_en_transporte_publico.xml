@@ -61,7 +61,7 @@
         android:layout_marginBottom="85dp"
         android:layout_x="263dp"
         android:layout_y="450dp"
-        android:onClick="transporte_activity" />
+        android:onClick="resultado_de_huella_activity" />
 
     <ImageView
         android:layout_width="164dp"

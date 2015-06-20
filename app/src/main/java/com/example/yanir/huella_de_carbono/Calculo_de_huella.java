@@ -20,6 +20,7 @@ public class Calculo_de_huella extends ActionBarActivity{
 
     private double valor_estandar_hogar =  0.5 ;
     private double valor_estandar_transporte ;
+    private double resultados_de_consumos [] = new double[3];
     private EditText consumo_introducido;
     private TextView respuesta;
     private Spinner Tipo_transporte;
@@ -27,6 +28,7 @@ public class Calculo_de_huella extends ActionBarActivity{
     private String[] Tm_transporte;
     private String [] Seleccion_de_usuario;
     private static Manejador_BD BD;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,11 +198,10 @@ public class Calculo_de_huella extends ActionBarActivity{
 
     public void transporte_publico_activity (View v) {
 
-        setContentView(R.layout.consumo_transporte_particular);
+        setContentView(R.layout.consumo_en_transporte_publico);
 
-        respuesta = (TextView) findViewById(R.id.Resultado_de_huella2);
-        Tipo_transporte = (Spinner)findViewById(R.id.Tipo_transporte);
-        Tamano_transporte = (Spinner)findViewById(R.id.Tamano_transporte);
+        respuesta = (TextView) findViewById(R.id.Resultado_de_huella);
+        Tipo_transporte = (Spinner)findViewById(R.id.spinner2);
 
         final String[] Tp_transporte =
                 new String[]{"Taxi","Autobus","Metro"};
@@ -279,8 +280,8 @@ public class Calculo_de_huella extends ActionBarActivity{
         respuesta = (TextView) findViewById(R.id.Resultado_de_huella);
 
         double consumo_de_usuario = Double.parseDouble(String.valueOf(consumo_introducido.getText()));
-
-        respuesta.setText("Tu emision para este consumo es de : " + String.valueOf(consumo_de_usuario * valor_estandar_hogar) + " KgCo2.");
+        resultados_de_consumos [0] =  consumo_de_usuario * valor_estandar_hogar ;
+        respuesta.setText("Tu emision para este consumo es de : " + String.valueOf(resultados_de_consumos [0]) + " KgCo2.");
 
     };
 
@@ -288,7 +289,8 @@ public class Calculo_de_huella extends ActionBarActivity{
 
         consumo_introducido =(EditText) findViewById(R.id.entrada_de_datos);
         double consumo_de_usuario = Double.parseDouble(String.valueOf(consumo_introducido.getText()));
-        respuesta.setText("Tu emision para este consumo es de : " + String.valueOf(consumo_de_usuario * valor_estandar_transporte) + " KgCo2.");
+        resultados_de_consumos [1] = new Double(consumo_de_usuario * valor_estandar_hogar) ;
+        respuesta.setText("Tu emision para este consumo es de : " + String.valueOf(resultados_de_consumos [1]) + " KgCo2.");
 
     };
 
@@ -296,9 +298,56 @@ public class Calculo_de_huella extends ActionBarActivity{
 
         consumo_introducido =(EditText) findViewById(R.id.entrada_de_datos);
         double consumo_de_usuario = Double.parseDouble(String.valueOf(consumo_introducido.getText()));
-        respuesta.setText("Tu emision para este consumo es de : " + String.valueOf(consumo_de_usuario * valor_estandar_transporte) + " KgCo2.");
+        resultados_de_consumos [2] = new Double(consumo_de_usuario * valor_estandar_hogar) ;
+        respuesta.setText("Tu emision para este consumo es de : " + String.valueOf(resultados_de_consumos [2]) + " KgCo2.");
+
 
     };
+
+
+
+    public void resultado_de_huella_activity (View v) {
+
+        setContentView(R.layout.resultado_de_huella);
+
+        TextView Kgco2 = (TextView) findViewById(R.id.Kgco2);
+        TextView mensaje = (TextView) findViewById(R.id.mensaje);
+        double resultado_final = 0;
+
+        for(int i= 0; i<=2; i++) {
+            resultado_final += resultados_de_consumos[i];
+        }
+
+
+        if(resultado_final <=6*30){
+            Kgco2.setText(String.valueOf(resultado_final));
+            mensaje.setText("Eres verde");
+        }
+
+        if(resultado_final >6*30 && resultado_final <= 14*30){
+            Kgco2.setText(String.valueOf(resultado_final));
+            mensaje.setText("Eres amarillo");
+        }
+
+        if(resultado_final >14*30 && resultado_final <= 22*30){
+            Kgco2.setText(String.valueOf(resultado_final));
+            mensaje.setText("Eres anaranjado");
+        }
+
+        if(resultado_final >22*30 && resultado_final <= 30*30){
+            Kgco2.setText(String.valueOf(resultado_final));
+            mensaje.setText("Eres rojo");
+        }
+
+        if(resultado_final > 30*30){
+            Kgco2.setText(String.valueOf(resultado_final));
+            mensaje.setText("Eres negro");
+        }
+
+
+
+    };
+
 
 
 

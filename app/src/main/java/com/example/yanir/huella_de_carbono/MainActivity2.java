@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 public class MainActivity2 extends ActionBarActivity {
 
-    private static Manejador_BD BD;
+
 
 
 
@@ -17,23 +17,7 @@ public class MainActivity2 extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BD = new Manejador_BD(this);
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Hogar','Electricidad','0.5');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Gasolina','Pequeño','0.15991');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Gasolina','Mediano','0.20018');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Gasolina','Grande','0.28944');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Diesel','Pequeño','0.14519');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Diesel','Mediano','0.17538');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Diesel','Grande','0.22867');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Moto','Pequeño','0.08499');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Moto','Mediano','0.10316');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Moto','Grande','0.0.13724');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Taxi','estandar','0.17625');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Autobus','estandar','0.10067');");
-        BD.Push_BD("INSERT INTO Valores_Estandar (area,dato,co2)  VALUES('Metro','estandar','0.035645');");
 
-        Intent intent = new Intent(MainActivity2.this, Calculo_de_huella.class);
-        startActivity(intent);
     }
 
 
@@ -58,4 +42,6 @@ public class MainActivity2 extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
