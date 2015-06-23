@@ -2,6 +2,7 @@ package com.example.yanir.huella_de_carbono;
 
 
 import android.database.Cursor;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -27,6 +29,7 @@ public class Calculo_de_huella extends ActionBarActivity{
     private Spinner Tamano_transporte;
     private String[] Tm_transporte;
     private String [] Seleccion_de_usuario;
+    private ImageView huella;
     private static Manejador_BD BD;
 
 
@@ -312,6 +315,7 @@ public class Calculo_de_huella extends ActionBarActivity{
 
         TextView Kgco2 = (TextView) findViewById(R.id.Kgco2);
         TextView mensaje = (TextView) findViewById(R.id.mensaje);
+        ImageView huella = (ImageView) findViewById(R.id.ImageHuella);
         double resultado_final = 0;
 
         for(int i= 0; i<=2; i++) {
@@ -322,26 +326,31 @@ public class Calculo_de_huella extends ActionBarActivity{
         if(resultado_final <=6*30){
             Kgco2.setText(String.valueOf(resultado_final));
             mensaje.setText("Eres verde");
+            huella.setImageResource(R.drawable.ic_huellacarbono2);
         }
 
         if(resultado_final >6*30 && resultado_final <= 14*30){
             Kgco2.setText(String.valueOf(resultado_final));
             mensaje.setText("Eres amarillo");
+            huella.setImageResource(R.drawable.ic_huella_amarilla);
         }
 
         if(resultado_final >14*30 && resultado_final <= 22*30){
             Kgco2.setText(String.valueOf(resultado_final));
             mensaje.setText("Eres anaranjado");
+            huella.setImageResource(R.drawable.ic_huella_naranja);
         }
 
         if(resultado_final >22*30 && resultado_final <= 30*30){
             Kgco2.setText(String.valueOf(resultado_final));
             mensaje.setText("Eres rojo");
+            huella.setImageResource(R.drawable.ic_huella_roja);
         }
 
         if(resultado_final > 30*30){
             Kgco2.setText(String.valueOf(resultado_final));
             mensaje.setText("Eres negro");
+            huella.setImageResource(R.drawable.ic_huella_negra);
         }
 
 

@@ -7,9 +7,10 @@
     <ImageView
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
+        android:id="@+id/ImageHuella"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.44" />
+        android:layout_weight="0.44"
+        android:src="@drawable/ic_huellacarbono2" />
 
     <TextView
         android:layout_width="150dp"
@@ -21,11 +22,10 @@
         android:layout_weight="0.06" />
 
     <TextView
-        android:layout_width="203dp"
+        android:layout_width="166dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/mensaje"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.12" />
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

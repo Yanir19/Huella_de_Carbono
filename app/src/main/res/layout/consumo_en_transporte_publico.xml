@@ -68,7 +68,8 @@
         android:layout_height="164dp"
         android:id="@+id/imageView"
         android:layout_x="103dp"
-        android:layout_y="17dp" />
+        android:layout_y="17dp"
+        android:src="@drawable/ic_transporte_publico" />
 
     <TextView
         android:layout_width="300dp"
