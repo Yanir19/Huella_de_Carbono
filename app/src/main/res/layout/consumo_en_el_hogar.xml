@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/vertical"
+    android:weightSum="1"
+    tools:context=".Calculo_de_huella">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Introdusca el consumo mensual de su tarifa electrica"
+        android:id="@+id/Informacion"
+        android:layout_marginBottom="88dp"
+        android:layout_above="@+id/entrada_de_datos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_x="0dp"
+        android:layout_y="238dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/entrada_de_datos"
+        android:text="KWh"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_x="5dp"
+        android:layout_y="291dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ok"
+        android:id="@+id/Ok_button"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:onClick="calculo_consumo_hogar"
+        android:layout_alignBaseline="@+id/button"
+        android:layout_alignBottom="@+id/button"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:layout_x="244dp"
+        android:layout_y="289dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/entrada_de_datos"
+        android:layout_toEndOf="@+id/entrada_de_datos"
+        android:layout_marginBottom="85dp"
+        android:layout_x="263dp"
+        android:layout_y="450dp"
+        android:onClick="transporte_particular_activity" />
+
+    <ImageView
+        android:layout_width="164dp"
+        android:layout_height="164dp"
+        android:id="@+id/imageView"
+        android:layout_x="96dp"
+        android:layout_y="50dp"
+        android:src="@drawable/ic_casa" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="El consumo de su factura es tal, pase a la siguiente pagina"
+        android:id="@+id/Resultado_de_huella"
+        android:layout_x="8dp"
+        android:layout_y="348dp" />
+
+</AbsoluteLayout>
