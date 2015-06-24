@@ -2,7 +2,6 @@ package com.example.yanir.huella_de_carbono;
 
 
 import android.database.Cursor;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;

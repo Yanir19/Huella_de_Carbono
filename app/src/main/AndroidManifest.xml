@@ -9,7 +9,6 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".Login"
-
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,12 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity2"
-            android:label="MainActivity2">
-            </activity>
-
+            android:label="MainActivity2" >
+        </activity>
         <activity
             android:name=".menu31"
             android:label="@string/title_activity_menu3" >
@@ -42,6 +39,10 @@
         <activity
             android:name=".Calculo_de_huella"
             android:label="Calculo_de_huella" >
+        </activity>
+        <activity
+            android:name=".historicoHuella"
+            android:label="@string/title_activity_historico_huella" >
         </activity>
     </application>
 

@@ -85,7 +85,8 @@ public class PrincipalActivity extends Activity implements View.OnClickListener 
                 break;
 
             case R.id.button2:
-
+                intent = new Intent(this, historicoHuella.class);
+                startActivity(intent);
 
                 break;
             case R.id.button3:
