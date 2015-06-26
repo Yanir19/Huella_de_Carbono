@@ -1,7 +1,9 @@
 package com.example.yanir.huella_de_carbono;
 
 
+import android.app.Activity;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -14,10 +16,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by Yanir on 09-06-2015.
  */
-public class Calculo_de_huella extends ActionBarActivity{
+public class Calculo_de_huella extends Activity {
 
     private double valor_estandar_hogar =  0.5 ;
     private double valor_estandar_transporte ;
@@ -30,6 +34,9 @@ public class Calculo_de_huella extends ActionBarActivity{
     private String [] Seleccion_de_usuario;
     private ImageView huella;
     private static Manejador_BD BD;
+    private TextView informacion1;
+    private TextView informacion2;
+    private TextView informacion3;
 
 
     @Override
@@ -37,6 +44,9 @@ public class Calculo_de_huella extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         Seleccion_de_usuario = new String[]{"null","null"};
         setContentView(R.layout.consumo_en_el_hogar);
+        informacion1 = (TextView) findViewById(R.id.Informacion);
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
+        informacion1.setTypeface(myTypeface);
 
     }
 
@@ -76,6 +86,9 @@ public class Calculo_de_huella extends ActionBarActivity{
         respuesta = (TextView) findViewById(R.id.Resultado_de_huella2);
         Tipo_transporte = (Spinner)findViewById(R.id.Tipo_transporte);
         Tamano_transporte = (Spinner)findViewById(R.id.Tamano_transporte);
+        informacion2 = (TextView) findViewById(R.id.Informacion);
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
+        informacion2.setTypeface(myTypeface);
 
         final String[] Tp_transporte =
                 new String[]{"Carro - Gasolina","Carro - Diesel","Moto"};
@@ -204,6 +217,9 @@ public class Calculo_de_huella extends ActionBarActivity{
 
         respuesta = (TextView) findViewById(R.id.Resultado_de_huella);
         Tipo_transporte = (Spinner)findViewById(R.id.spinner2);
+        informacion3 = (TextView) findViewById(R.id.Informacion);
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
+        informacion3.setTypeface(myTypeface);
 
         final String[] Tp_transporte =
                 new String[]{"Taxi","Autobus","Metro"};
