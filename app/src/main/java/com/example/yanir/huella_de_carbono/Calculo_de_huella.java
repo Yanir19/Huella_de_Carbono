@@ -2,18 +2,23 @@ package com.example.yanir.huella_de_carbono;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -21,7 +26,7 @@ import org.w3c.dom.Text;
 /**
  * Created by Yanir on 09-06-2015.
  */
-public class Calculo_de_huella extends Activity {
+public class Calculo_de_huella extends Activity implements View.OnClickListener {
 
     private double valor_estandar_hogar =  0.5 ;
     private double valor_estandar_transporte ;
@@ -37,6 +42,15 @@ public class Calculo_de_huella extends Activity {
     private TextView informacion1;
     private TextView informacion2;
     private TextView informacion3;
+    private Button carroenbus;
+    private Button carroencasa;
+    private Button busencarro;
+    private Button busencasa;
+    private Button casaencarro;
+    private Button casaenbus;
+    LinearLayout ll_elSwipe1;
+    LinearLayout ll_elSwipe2;
+    LinearLayout ll_elSwipe3;
 
 
     @Override
@@ -47,8 +61,32 @@ public class Calculo_de_huella extends Activity {
         informacion1 = (TextView) findViewById(R.id.Informacion);
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
         informacion1.setTypeface(myTypeface);
+        carroencasa = (Button) findViewById(R.id.botoncarroencasa);
+        busencasa = (Button) findViewById(R.id.botonbusencasa);
+        busencasa.setOnClickListener(this);
+        carroencasa.setOnClickListener(this);
+        ll_elSwipe1 = (LinearLayout) findViewById(R.id.elSwipe_layout);
+        ll_elSwipe1.setOnTouchListener(new OnSwipeTouchListener(this) {
 
+            public void onSwipeTop() {
+            }
+            public void onSwipeRight() {
+
+            }
+            public void onSwipeLeft() {
+                transporte_particular_activity(ll_elSwipe1);
+            }
+            public void onSwipeBottom() {
+            }
+            public void onTouchable() {
+            }
+            public boolean onTouch(View v, MotionEvent event) {
+                return gestureDetector.onTouchEvent(event);
+            }
+        });
     }
+
+
 
 
     @Override
@@ -74,7 +112,36 @@ public class Calculo_de_huella extends Activity {
     }
 
 
+public void consumo_hogar_activity (View v){
+    Seleccion_de_usuario = new String[]{"null","null"};
+    setContentView(R.layout.consumo_en_el_hogar);
+    informacion1 = (TextView) findViewById(R.id.Informacion);
+    Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
+    informacion1.setTypeface(myTypeface);
+    carroencasa = (Button) findViewById(R.id.botoncarroencasa);
+    busencasa = (Button) findViewById(R.id.botonbusencasa);
+    busencasa.setOnClickListener(this);
+    carroencasa.setOnClickListener(this);
+    ll_elSwipe1 = (LinearLayout) findViewById(R.id.elSwipe_layout);
+    ll_elSwipe1.setOnTouchListener(new OnSwipeTouchListener(this) {
 
+        public void onSwipeTop() {
+        }
+        public void onSwipeRight() {
+
+        }
+        public void onSwipeLeft() {
+            transporte_particular_activity(ll_elSwipe1);
+        }
+        public void onSwipeBottom() {
+        }
+        public void onTouchable() {
+        }
+        public boolean onTouch(View v, MotionEvent event) {
+            return gestureDetector.onTouchEvent(event);
+        }
+    });
+};
 
 
 
@@ -89,6 +156,29 @@ public class Calculo_de_huella extends Activity {
         informacion2 = (TextView) findViewById(R.id.Informacion);
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
         informacion2.setTypeface(myTypeface);
+        busencarro = (Button) findViewById(R.id.botonbusencarro);
+        casaencarro = (Button) findViewById(R.id.botoncasaencarro);
+        busencarro.setOnClickListener(this);
+        casaencarro.setOnClickListener(this);
+        ll_elSwipe2 = (LinearLayout) findViewById(R.id.elSwipe_layout2);
+        ll_elSwipe2.setOnTouchListener(new OnSwipeTouchListener(this) {
+
+            public void onSwipeTop() {
+            }
+            public void onSwipeRight() {
+                consumo_hogar_activity(ll_elSwipe2);
+            }
+            public void onSwipeLeft() {
+                transporte_publico_activity(ll_elSwipe2);
+            }
+            public void onSwipeBottom() {
+            }
+            public void onTouchable() {
+            }
+            public boolean onTouch(View v, MotionEvent event) {
+                return gestureDetector.onTouchEvent(event);
+            }
+        });
 
         final String[] Tp_transporte =
                 new String[]{"Carro - Gasolina","Carro - Diesel","Moto"};
@@ -220,7 +310,28 @@ public class Calculo_de_huella extends Activity {
         informacion3 = (TextView) findViewById(R.id.Informacion);
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
         informacion3.setTypeface(myTypeface);
+        carroenbus = (Button) findViewById(R.id.botoncarroenbus);
+        casaenbus = (Button) findViewById(R.id.botoncasaenbus);
+        carroenbus.setOnClickListener(this);
+        casaenbus.setOnClickListener(this);
+        ll_elSwipe3 = (LinearLayout) findViewById(R.id.elSwipe_layout3);
+        ll_elSwipe3.setOnTouchListener(new OnSwipeTouchListener(this) {
 
+            public void onSwipeTop() {
+            }
+            public void onSwipeRight() {
+                transporte_particular_activity(ll_elSwipe1);
+            }
+            public void onSwipeLeft() {
+            }
+            public void onSwipeBottom() {
+            }
+            public void onTouchable() {
+            }
+            public boolean onTouch(View v, MotionEvent event) {
+                return gestureDetector.onTouchEvent(event);
+            }
+        });
         final String[] Tp_transporte =
                 new String[]{"Taxi","Autobus","Metro"};
 
@@ -296,7 +407,8 @@ public class Calculo_de_huella extends Activity {
 
         consumo_introducido =(EditText) findViewById(R.id.entrada_de_datos);
         respuesta = (TextView) findViewById(R.id.Resultado_de_huella);
-
+        if(consumo_introducido.getText().toString().equals(""))
+            consumo_introducido.setText("0");
         double consumo_de_usuario = Double.parseDouble(String.valueOf(consumo_introducido.getText()));
         resultados_de_consumos [0] =  consumo_de_usuario * valor_estandar_hogar ;
         respuesta.setText("Tu emision para este consumo es de : " + String.valueOf(resultados_de_consumos [0]) + " KgCo2.");
@@ -306,6 +418,8 @@ public class Calculo_de_huella extends Activity {
     public void calculo_consumo_transporte_particular (View v){
 
         consumo_introducido =(EditText) findViewById(R.id.entrada_de_datos);
+        if(consumo_introducido.getText().toString().equals(""))
+            consumo_introducido.setText("0");
         double consumo_de_usuario = Double.parseDouble(String.valueOf(consumo_introducido.getText()));
         resultados_de_consumos [1] = new Double(consumo_de_usuario * valor_estandar_hogar) ;
         respuesta.setText("Tu emision para este consumo es de : " + String.valueOf(resultados_de_consumos [1]) + " KgCo2.");
@@ -315,6 +429,8 @@ public class Calculo_de_huella extends Activity {
     public void calculo_consumo_transporte_publico (View v){
 
         consumo_introducido =(EditText) findViewById(R.id.entrada_de_datos);
+        if(consumo_introducido.getText().toString().equals(""))
+            consumo_introducido.setText("0");
         double consumo_de_usuario = Double.parseDouble(String.valueOf(consumo_introducido.getText()));
         resultados_de_consumos [2] = new Double(consumo_de_usuario * valor_estandar_hogar) ;
         respuesta.setText("Tu emision para este consumo es de : " + String.valueOf(resultados_de_consumos [2]) + " KgCo2.");
@@ -372,7 +488,39 @@ public class Calculo_de_huella extends Activity {
 
     };
 
+    @Override
+    public void onClick(View v) {
 
+        switch (v.getId()){
+
+            case (R.id.botoncarroenbus):
+                transporte_particular_activity(v);
+                break;
+            case (R.id.botoncarroencasa):
+                transporte_particular_activity(v);
+                break;
+
+            case (R.id.botoncasaenbus):
+                consumo_hogar_activity(v);
+                break;
+            case (R.id.botoncasaencarro):
+                consumo_hogar_activity(v);
+                break;
+
+            case (R.id.botonbusencarro):
+                transporte_publico_activity(v);
+                break;
+            case (R.id.botonbusencasa):
+                transporte_publico_activity(v);
+                break;
+
+            default:
+                System.out.println("ENTRE CON EL ID "+v.getId());
+
+        }
+
+
+    }
 
 
 }

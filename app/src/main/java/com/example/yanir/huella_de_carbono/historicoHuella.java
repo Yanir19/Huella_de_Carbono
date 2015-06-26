@@ -45,7 +45,7 @@ public class historicoHuella extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         int i=0;
-        while(v.getId() != paticas.get(i).getIdView())
+        while(v.getId() != paticas.get(i).getCedula())
             i++;
 
         tv_tips.setText(paticas.get(i).getSugerencias());
@@ -58,7 +58,6 @@ public class historicoHuella extends Activity implements View.OnClickListener {
 
         private ImageView patica;
         private int idRecurso;
-        private int idView;
         private int cedula;
         private String sugerencias;
 
@@ -68,12 +67,6 @@ public class historicoHuella extends Activity implements View.OnClickListener {
         }
         public int getRecurso(){
             return idRecurso;
-        }
-        public void setIdView(int idView) {
-            this.idView = idView;
-        }
-        public int getIdView() {
-            return idView;
         }
         public int getCedula() {
             return cedula;
@@ -94,16 +87,14 @@ public class historicoHuella extends Activity implements View.OnClickListener {
          *
          * @param vistaAccesorio ImageView donde se encuentra la imagen
          * @param id El id del recurso utilizdo (El de la imagen)
-         * @param id_vista  El id del ImageView
          * @param context   El contexto donde se ejecutara el evento de click
          */
-        public Patica(ImageView vistaAccesorio,int id,int id_vista,Context context, int cedula,String sugerencia){
+        public Patica(ImageView vistaAccesorio,int id,Context context, int cedula,String sugerencia){
             this.patica = vistaAccesorio;
             this.idRecurso = id;
             this.patica.setImageResource(id);
             this.patica.setOnClickListener((View.OnClickListener) context);
-            this.patica.setId(id_vista);
-            this.idView=id_vista;
+            this.patica.setId(cedula);
             this.cedula=cedula;
             sugerencias = new String();
             this.sugerencias = sugerencia;
@@ -115,7 +106,7 @@ public class historicoHuella extends Activity implements View.OnClickListener {
 
     private void inicializarPaticas(ArrayList<Patica> paticasArray, int[] tiposDePaticas){
         for(int i=0;i<tiposDePaticas.length;i++){
-            paticasArray.add(new Patica(new ImageView(this),tiposDePaticas[i],View.generateViewId(),this,i,"Aqui debe ir el String sacado de la BD con la sugerencia personalizada"));
+            paticasArray.add(new Patica(new ImageView(this),tiposDePaticas[i],this,i,"Aqui debe ir el String sacado de la BD con la sugerencia personalizada"));
         }
     }
 

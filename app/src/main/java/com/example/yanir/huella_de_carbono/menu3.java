@@ -53,13 +53,13 @@ public class menu3 extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case (R.id.como_boton):
+            case (R.id.que_boton):
                 Intent i = new Intent(this, menu311.class);
                 i.putExtra("tipo",7);
                 startActivity(i);
             break;
 
-            case (R.id.que_boton):
+            case (R.id.como_boton):
                 Intent j = new Intent(this, menu311.class);
                 j.putExtra("tipo",8);
                 startActivity(j);

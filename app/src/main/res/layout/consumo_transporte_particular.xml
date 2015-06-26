@@ -6,7 +6,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="#e0ebc2">
+    android:background="#e0ebc2"
+    android:id="@+id/elSwipe_layout2">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -27,7 +28,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button8"
+                android:id="@+id/botoncasaencarro"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/ic_casita" />
@@ -44,7 +45,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button9"
+                android:id="@+id/botoncarroencarro"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/ic_carro_pisado_menos_padding" />
@@ -61,9 +62,8 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button10"
-                android:background="@drawable/ic_bus"
-                android:layout_alignParentStart="false" />
+                android:id="@+id/botonbusencarro"
+                android:background="@drawable/ic_bus"/>
         </RelativeLayout>
     </LinearLayout>
 
@@ -74,104 +74,123 @@
         android:layout_height="wrap_content"
         android:layout_weight="4">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@drawable/estilo_tips"
-            android:layout_weight="1"
-            android:layout_marginRight="2.5dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView3"
+            android:layout_weight="1">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Introduzca el consumo mensual de combustible; selecciona el tamaño de su motor y tipo de combustible"
-                android:id="@+id/Informacion"
-                android:layout_above="@+id/entrada_de_datos"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_x="0dp"
-                android:layout_y="238dp"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:textSize="30dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:textColor="@color/fondo_menu"
-                android:textStyle="bold" />
-        </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/estilo_tips"
+                android:layout_weight="1"
+                android:layout_marginRight="2.5dp"
+                android:id="@+id/izquierda"
+                >
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@drawable/estilo_historico"
-            android:layout_weight="1"
-            android:layout_marginLeft="2.5dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Introduzca el consumo mensual de combustible; selecciona el tamaño de su motor y tipo de combustible"
+                    android:id="@+id/Informacion"
+                    android:layout_above="@+id/entrada_de_datos"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_x="0dp"
+                    android:layout_y="238dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:textSize="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/fondo_menu"
+                    android:textStyle="bold" />
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/Tamano_transporte"
-                android:layout_x="0dp"
-                android:layout_y="286dp"
-                android:spinnerMode="dropdown"
-                android:padding="10dp" />
+            </LinearLayout>
+        </ScrollView>
 
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Tipo_transporte"
-                android:layout_x="0dp"
-                android:layout_y="207dp"
-                android:spinnerMode="dropdown"
-                android:padding="10dp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView2"
+            android:layout_weight="1">
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/entrada_de_datos"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_x="8dp"
-                android:layout_y="361dp"
-                android:hint="Litros"
-                android:padding="10dp"
-                android:layout_margin="10dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/estilo_historico"
+                android:layout_weight="1"
+                android:layout_marginLeft="2.5dp"
+                android:id="@+id/derecha">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ok"
-                android:id="@+id/Ok_button"
-                android:layout_gravity="center_horizontal"
-                android:clickable="true"
-                android:onClick="calculo_consumo_transporte_particular"
-                android:layout_alignBaseline="@+id/button"
-                android:layout_alignBottom="@+id/button"
-                android:layout_alignRight="@+id/button"
-                android:layout_alignEnd="@+id/button"
-                android:layout_x="245dp"
-                android:layout_y="356dp"
-                android:padding="10dp" />
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Tamano_transporte"
+                    android:layout_x="0dp"
+                    android:layout_y="286dp"
+                    android:spinnerMode="dropdown"
+                    android:padding="10dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/Resultado_de_huella2"
-                android:layout_x="10dp"
-                android:layout_y="410dp"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textStyle="italic" />
-        </LinearLayout>
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Tipo_transporte"
+                    android:layout_x="0dp"
+                    android:layout_y="207dp"
+                    android:spinnerMode="dropdown"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/entrada_de_datos"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_x="8dp"
+                    android:layout_y="361dp"
+                    android:hint="Litros"
+                    android:padding="10dp"
+                    android:layout_margin="10dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Ok_button"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:onClick="calculo_consumo_transporte_particular"
+                    android:layout_alignBaseline="@+id/button"
+                    android:layout_alignBottom="@+id/button"
+                    android:layout_alignRight="@+id/button"
+                    android:layout_alignEnd="@+id/button"
+                    android:layout_x="245dp"
+                    android:layout_y="356dp"
+                    android:padding="10dp"
+                    android:background="@drawable/botonok" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/Resultado_de_huella2"
+                    android:layout_x="10dp"
+                    android:layout_y="410dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="30dp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
     <RelativeLayout
@@ -183,11 +202,11 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Siguiente"
             android:id="@+id/button"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:onClick="transporte_publico_activity" />
+            android:onClick="transporte_publico_activity"
+            android:background="@drawable/botonsiguiente" />
     </RelativeLayout>
 
 </LinearLayout>

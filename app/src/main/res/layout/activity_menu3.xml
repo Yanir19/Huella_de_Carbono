@@ -31,7 +31,7 @@
                 android:id="@+id/que_boton"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/botonqueeslahuella2" />
+                android:background="@drawable/botonqueeslahuella3" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -62,7 +62,7 @@
                     android:id="@+id/como_boton"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
-                    android:background="@drawable/botoncomosecalcula1" />
+                    android:background="@drawable/botoncomosecalcula2" />
             </RelativeLayout>
         </LinearLayout>
 
