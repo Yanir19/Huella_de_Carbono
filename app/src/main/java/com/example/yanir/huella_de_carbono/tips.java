@@ -14,7 +14,7 @@ public class tips {
     Vector<String> tips_comida = new Vector<String>();
     Vector<String> tips_laptop = new Vector<String>();
     Vector<String> que_es_la_huella = new Vector<String>();
-    Vector<String> como_se_calcula = new Vector<String>();
+    Vector<String> como_se_calcula = new Vector<String>() ;
 
 
 
