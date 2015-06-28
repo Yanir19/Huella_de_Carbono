@@ -19,7 +19,6 @@ public class tips {
 
     public tips() {
 
-
     }
 
     public Vector agregarTips(int tipo){
