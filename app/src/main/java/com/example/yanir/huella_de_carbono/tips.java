@@ -22,7 +22,7 @@ public class tips {
     }
 
     public Vector agregarTips(int tipo){
-        switch (tipo) {
+        switch (tipo)  {
             case 1:
                 tips_carro.add("Mantenga bien infladas y calibradas las llantas de su carro. Esta acción le permite ahorrar gasolina, además el motor no la quema en exceso.");
                 tips_carro.add("Para pequeños desplazamientos dentro de la ciudad considere la posibilidad de ir a pie en bicicleta o en transporte público.");
