@@ -2,6 +2,7 @@ package com.example.yanir.huella_de_carbono;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,7 +15,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class historicoHuella extends Activity implements View.OnClickListener {
@@ -22,6 +25,8 @@ public class historicoHuella extends Activity implements View.OnClickListener {
     private int[] tiposDePaticas = {R.drawable.ic_huella_verde,R.drawable.ic_huella_amarilla,R.drawable.ic_huella_naranja,R.drawable.ic_huella_negra,R.drawable.ic_huella_roja};
     private LinearLayout imagenesHorizontales;
     private ArrayList<Patica> paticas;
+    private Cursor result;
+    private Manejador_BD BD;
     TextView tv_tips;
     ImageView iv_patica;
 
@@ -40,6 +45,8 @@ public class historicoHuella extends Activity implements View.OnClickListener {
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
         tv_tips = (TextView) findViewById(R.id.textview_tips);
         tv_tips.setTypeface(myTypeface);
+        BD = new Manejador_BD(historicoHuella.this);
+
     }
 
     @Override
@@ -104,10 +111,58 @@ public class historicoHuella extends Activity implements View.OnClickListener {
     }
 
 
+
+
+
+
     private void inicializarPaticas(ArrayList<Patica> paticasArray, int[] tiposDePaticas){
-        for(int i=0;i<tiposDePaticas.length;i++){
-            paticasArray.add(new Patica(new ImageView(this),tiposDePaticas[i],this,i,"Aqui debe ir el String sacado de la BD con la sugerencia personalizada"));
+        int i=0;
+        int j=0;
+        double resultado;
+        String fecha;
+        String mensaje;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+        result = BD.Get_BD("SELECT * FROM Resultado_de_emision ;");
+
+        if (result.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                resultado = (result.getDouble(0));
+                fecha = sdf.format(result.getString(1));
+                mensaje = result.getString(2);
+
+                if(resultado <=6*30){
+                    j=tiposDePaticas[0];
+
+                }
+
+                if(resultado >6*30 && resultado <= 14*30){
+                    j=tiposDePaticas[1];
+                }
+
+                if(resultado >14*30 && resultado <= 22*30){
+                    j=tiposDePaticas[2];
+                }
+
+                if(resultado >22*30 && resultado <= 30*30){
+                    j=tiposDePaticas[4];
+                }
+
+                if(resultado > 30*30){
+                    j=tiposDePaticas[3];
+                }
+
+                paticasArray.add(new Patica(new ImageView(this),j,this,i,fecha+"\n"+mensaje));
+
+
+
+
+
+                i++;
+            } while(result.moveToNext());
         }
+
     }
 
     @Override
