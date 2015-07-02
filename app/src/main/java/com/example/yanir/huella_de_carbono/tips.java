@@ -44,7 +44,7 @@ public class tips {
                 tips_casa.add("La fabricación del aluminio es uno de los procesos industriales de mayor consumo energético y de mayor impacto ambiental. Modere la utilización de papel de aluminio.");
                 tips_casa.add("La bolsa de plástico que traemos de la compra se puede reutilizar como bolsa de la basura.");
                 tips_casa.add("Los residuos son una fuente potencial de energía y materias primas que puede aprovecharse. De hecho, gran parte de la basura que se genera es recuperable o reciclable.");
-             return tips_casa;
+            return tips_casa;
 
             case 3:
                 tips_cocina.add("No seque la ropa de algodón y la ropa pesada en las mismas cargas de secado que la ropa ligera. Estas últimas se secan antes.");
@@ -98,36 +98,30 @@ public class tips {
             return como_se_calcula;
 
             case 9://PATICA AMARILLA
-                tips_amarilla.add("TIP DE PATICA AMARILLA.");
-                tips_amarilla.add("OTRO TIP DE PATICA AMARILLA.");
-                tips_amarilla.add("TIP DE PATICA AMARILLA.");
-                tips_amarilla.add("OTRO TIP DE PATICA AMARILLA.");
+                tips_amarilla.add("No lleves un portaequipajes vacío. Esto aumenta el consumo de combustible y las emisiones de CO2 hasta en un 10% debido a la resistencia del viento y al peso adicional.");
+                tips_amarilla.add("Sustituya las lamparas incandescentes por lámparas de bajo consumo. Para un mismo nivel de iluminación, ahorran hasta un 80% de energía y duran 8 veces más.");
                 return tips_amarilla;
 
             case 10://PATICA NARANJA
-                tips_naranja.add("TIP DE PATICA NARANJA.");
-                tips_naranja.add("OTRO TIP DE PATICA NARANJA.");
-                tips_naranja.add("TIP DE PATICA NARANJA.");
-                tips_naranja.add("OTRO TIP DE PATICA NARANJA.");
+                tips_naranja.add("La fabricación del aluminio es uno de los procesos industriales de mayor consumo energético y de mayor impacto ambiental. Modere la utilización de papel de aluminio.");
+                tips_naranja.add("No dejes los aparatos eléctricos en modo stand-by (espera). Utiliza la función on/off del propio aparato.");
+
                 return tips_naranja;
 
             case 11://PATICA NEGRA
-                tips_negra.add("TIP DE PATICA NEGRA.");
-                tips_negra.add("OTRO TIP DE PATICA NEGRA.");
-                tips_negra.add("TIP DE PATICA NEGRA.");
-                tips_negra.add("OTRO TIP DE PATICA NEGRA.");
+                tips_negra.add("Los residuos son una fuente potencial de energía y materias primas que puede aprovecharse. De hecho, gran parte de la basura que se genera es recuperable o reciclable.");
+                tips_negra.add("Compensa tus emisiones de CO2, una forma de hacerlo es sembrar árboles.");
                 return tips_negra;
+
             case 12://PATICA ROJA
-                tips_roja.add("TIP DE PATICA ROJA.");
-                tips_roja.add("OTRO TIP DE PATICA ROJA.");
-                tips_roja.add("TIP DE PATICA ROJA.");
-                tips_roja.add("OTRO TIP DE PATICA ROJA.");
+                tips_roja.add("Para pequeños desplazamientos dentro de la ciudad considere la posibilidad de ir a pie en bicicleta o en transporte público.");
+                tips_roja.add("Secar la ropa significa un gran consumo de energía. Es recomendable limitar su uso a situaciones de urgencia. Si emplea la función de secado del lavarropas, centrifugue previamente la ropa para no hacerla trabajar más.");
+
+
                 return tips_roja;
             case 13://PATICA VERDE
-                tips_verde.add("TIP DE PATICA VERDE.");
-                tips_verde.add("OTRO TIP DE PATICA VERDE.");
-                tips_verde.add("TIP DE PATICA VERDE.");
-                tips_verde.add("OTRO TIP DE PATICA VERDE.");
+                tips_verde.add("Desenchufa el cargador del teléfono cuando no lo utilices. Incluso cuando no está conectado al teléfono, consume electricidad.");
+                tips_verde.add("Mantenga bien infladas y calibradas las llantas de su carro. Esta acción le permite ahorrar gasolina, además el motor no la quema en exceso.");
                 return tips_verde;
 
         }
