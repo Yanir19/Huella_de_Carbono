@@ -124,6 +124,7 @@ public class tips {
                 tips_verde.add("Mantenga bien infladas y calibradas las llantas de su carro. Esta acción le permite ahorrar gasolina, además el motor no la quema en exceso.");
                 return tips_verde;
 
+
         }
 
 
