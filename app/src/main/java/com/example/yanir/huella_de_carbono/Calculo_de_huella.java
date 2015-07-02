@@ -465,31 +465,32 @@ public void consumo_hogar_activity (View v){
 
         if(resultado_final <=6*30){
             tips_paticas=tipPaticas.agregarTips(13);
-            mensaje.setText(mensaje.getText()+"Tu color es verde\ny estos son los tips que escogimos para ti:\n");
+            mensaje.setText(mensaje.getText()+"Tu color es verde\ny estos son los tips que escogimos para ti:\n\n");
             huella.setImageResource(R.drawable.ic_huellacarbono2);
         }
 
         if(resultado_final >6*30 && resultado_final <= 14*30){
             tips_paticas=tipPaticas.agregarTips(9);
-            mensaje.setText(mensaje.getText()+"Tu color es amarillo\ny estos son los tips que escogimos para ti:\n");
+            mensaje.setText(mensaje.getText()+"Tu color es amarillo\ny estos son los tips que escogimos para ti:\n\n");
             huella.setImageResource(R.drawable.ic_huella_amarilla);
         }
 
         if(resultado_final >14*30 && resultado_final <= 22*30){
             tips_paticas=tipPaticas.agregarTips(10);
-            mensaje.setText(mensaje.getText()+"Tu color es anaranjado\ny estos son los tips que escogimos para ti:\n");
+            mensaje.setText(mensaje.getText()+"Tu color es anaranjado\ny estos son los tips que escogimos para ti:\n\n");
             huella.setImageResource(R.drawable.ic_huella_naranja);
         }
 
         if(resultado_final >22*30 && resultado_final <= 30*30){
             tips_paticas=tipPaticas.agregarTips(12);
-            mensaje.setText(mensaje.getText()+"Tu color es rojo\ny estos son los tips que escogimos para ti:\n");
+            mensaje.setText(mensaje.getText()+"Tu color es rojo\ny estos son los tips que escogimos para ti:\n\n");
             huella.setImageResource(R.drawable.ic_huella_roja);
         }
 
         if(resultado_final > 30*30){
             tips_paticas=tipPaticas.agregarTips(11);
-            mensaje.setText(mensaje.getText()+"Tu color es negro\ny estos son los tips que escogimos para ti:\n");
+            mensaje.setText(mensaje.getText()+"Tu color es negro\ny estos son los tips que escogimos para ti:\n\n" +
+                    "");
             huella.setImageResource(R.drawable.ic_huella_negra);
         }
 
