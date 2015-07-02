@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class historicoHuella extends Activity implements View.OnClickListener {
 
-    private int[] tiposDePaticas = {R.drawable.ic_huella_amarilla,R.drawable.ic_huella_naranja,R.drawable.ic_huella_negra,R.drawable.ic_huella_roja};
+    private int[] tiposDePaticas = {R.drawable.ic_huella_verde,R.drawable.ic_huella_amarilla,R.drawable.ic_huella_naranja,R.drawable.ic_huella_negra,R.drawable.ic_huella_roja};
     private LinearLayout imagenesHorizontales;
     private ArrayList<Patica> paticas;
     TextView tv_tips;

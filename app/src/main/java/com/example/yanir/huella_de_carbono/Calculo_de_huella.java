@@ -23,6 +23,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.Vector;
+
 /**
  * Created by Yanir on 09-06-2015.
  */
@@ -51,6 +53,9 @@ public class Calculo_de_huella extends Activity implements View.OnClickListener 
     LinearLayout ll_elSwipe1;
     LinearLayout ll_elSwipe2;
     LinearLayout ll_elSwipe3;
+    private tips tipPaticas;
+    Vector<String> tips_paticas = new Vector<String>();
+
 
 
     @Override
@@ -443,9 +448,10 @@ public void consumo_hogar_activity (View v){
     public void resultado_de_huella_activity (View v) {
 
         setContentView(R.layout.resultado_de_huella);
-
-        TextView Kgco2 = (TextView) findViewById(R.id.Kgco2);
+        tipPaticas = new tips();
         TextView mensaje = (TextView) findViewById(R.id.mensaje);
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
+        mensaje.setTypeface(myTypeface);
         ImageView huella = (ImageView) findViewById(R.id.ImageHuella);
         double resultado_final = 0;
 
@@ -453,38 +459,42 @@ public void consumo_hogar_activity (View v){
             resultado_final += resultados_de_consumos[i];
         }
 
+        mensaje.setText(" Tu calculo fue de "+String.valueOf(resultado_final)+" KgC02\n");
 
         if(resultado_final <=6*30){
-            Kgco2.setText(String.valueOf(resultado_final));
-            mensaje.setText("Eres verde");
+            tips_paticas=tipPaticas.agregarTips(13);
+            mensaje.setText(mensaje.getText()+"Tu color es verde\ny estos son los tips que escogimos para ti:\n");
             huella.setImageResource(R.drawable.ic_huellacarbono2);
         }
 
         if(resultado_final >6*30 && resultado_final <= 14*30){
-            Kgco2.setText(String.valueOf(resultado_final));
-            mensaje.setText("Eres amarillo");
+            tips_paticas=tipPaticas.agregarTips(9);
+            mensaje.setText(mensaje.getText()+"Tu color es amarillo\ny estos son los tips que escogimos para ti:\n");
             huella.setImageResource(R.drawable.ic_huella_amarilla);
         }
 
         if(resultado_final >14*30 && resultado_final <= 22*30){
-            Kgco2.setText(String.valueOf(resultado_final));
-            mensaje.setText("Eres anaranjado");
+            tips_paticas=tipPaticas.agregarTips(10);
+            mensaje.setText(mensaje.getText()+"Tu color es anaranjado\ny estos son los tips que escogimos para ti:\n");
             huella.setImageResource(R.drawable.ic_huella_naranja);
         }
 
         if(resultado_final >22*30 && resultado_final <= 30*30){
-            Kgco2.setText(String.valueOf(resultado_final));
-            mensaje.setText("Eres rojo");
+            tips_paticas=tipPaticas.agregarTips(12);
+            mensaje.setText(mensaje.getText()+"Tu color es rojo\ny estos son los tips que escogimos para ti:\n");
             huella.setImageResource(R.drawable.ic_huella_roja);
         }
 
         if(resultado_final > 30*30){
-            Kgco2.setText(String.valueOf(resultado_final));
-            mensaje.setText("Eres negro");
+            tips_paticas=tipPaticas.agregarTips(11);
+            mensaje.setText(mensaje.getText()+"Tu color es negro\ny estos son los tips que escogimos para ti:\n");
             huella.setImageResource(R.drawable.ic_huella_negra);
         }
 
 
+        for(int i=0; i<tips_paticas.size();i++){
+            mensaje.setText(mensaje.getText()+tips_paticas.get(i)+"\n");
+        }
 
     };
 

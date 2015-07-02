@@ -50,10 +50,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:text="Name"
+                    android:text="Huella de Carbono"
                     android:ems="10"
                     android:id="@+id/editText"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    android:enabled="false"
+                    android:editable="true"
+                    android:textAlignment="center"
+                    android:textColor="#000000" />
             </FrameLayout>
 
             <FrameLayout
@@ -69,7 +73,10 @@
                     android:ems="10"
                     android:id="@+id/editText2"
                     android:layout_gravity="center"
-                    android:text="Ingrese su Clave" />
+                    android:text="Ingrese su Clave"
+                    android:enabled="false"
+                    android:editable="true"
+                    android:textColor="#000000" />
             </FrameLayout>
 
             <FrameLayout
@@ -105,14 +112,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOGIN INCORRECTO"
+            android:text="VIA INCORRECTA"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal|top" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="recuperar clave"
+            android:text="recuperar rumbo"
             android:id="@+id/textView2"
             android:layout_gravity="center"
             android:textColor="#4ecdc4"

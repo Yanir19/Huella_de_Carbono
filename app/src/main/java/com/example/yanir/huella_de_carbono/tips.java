@@ -13,6 +13,11 @@ public class tips {
     Vector<String> tips_cocina = new Vector<String>();
     Vector<String> tips_comida = new Vector<String>();
     Vector<String> tips_laptop = new Vector<String>();
+    Vector<String> tips_amarilla = new Vector<String>();
+    Vector<String> tips_negra = new Vector<String>();
+    Vector<String> tips_roja = new Vector<String>();
+    Vector<String> tips_naranja = new Vector<String>();
+    Vector<String> tips_verde = new Vector<String>();
 
     Vector<String> que_es_la_huella = new Vector<String>();
     Vector<String> como_se_calcula = new   Vector<String>() ;
@@ -92,7 +97,42 @@ public class tips {
                 como_se_calcula.add("Los factores de emisión se determinan por organismos e instituciones y hay distintos factores de emision dependiendo de lo que genere el CO2 (Combustibles, electricidad, etc). ");
             return como_se_calcula;
 
+            case 9://PATICA AMARILLA
+                tips_amarilla.add("TIP DE PATICA AMARILLA.");
+                tips_amarilla.add("OTRO TIP DE PATICA AMARILLA.");
+                tips_amarilla.add("TIP DE PATICA AMARILLA.");
+                tips_amarilla.add("OTRO TIP DE PATICA AMARILLA.");
+                return tips_amarilla;
+
+            case 10://PATICA NARANJA
+                tips_naranja.add("TIP DE PATICA NARANJA.");
+                tips_naranja.add("OTRO TIP DE PATICA NARANJA.");
+                tips_naranja.add("TIP DE PATICA NARANJA.");
+                tips_naranja.add("OTRO TIP DE PATICA NARANJA.");
+                return tips_naranja;
+
+            case 11://PATICA NEGRA
+                tips_negra.add("TIP DE PATICA NEGRA.");
+                tips_negra.add("OTRO TIP DE PATICA NEGRA.");
+                tips_negra.add("TIP DE PATICA NEGRA.");
+                tips_negra.add("OTRO TIP DE PATICA NEGRA.");
+                return tips_negra;
+            case 12://PATICA ROJA
+                tips_roja.add("TIP DE PATICA ROJA.");
+                tips_roja.add("OTRO TIP DE PATICA ROJA.");
+                tips_roja.add("TIP DE PATICA ROJA.");
+                tips_roja.add("OTRO TIP DE PATICA ROJA.");
+                return tips_roja;
+            case 13://PATICA VERDE
+                tips_verde.add("TIP DE PATICA VERDE.");
+                tips_verde.add("OTRO TIP DE PATICA VERDE.");
+                tips_verde.add("TIP DE PATICA VERDE.");
+                tips_verde.add("OTRO TIP DE PATICA VERDE.");
+                return tips_verde;
+
         }
+
+
 
         return tips_carro;
     }

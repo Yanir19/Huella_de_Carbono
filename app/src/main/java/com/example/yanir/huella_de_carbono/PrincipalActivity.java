@@ -29,8 +29,6 @@ public class PrincipalActivity extends Activity implements View.OnClickListener 
         boton2.setOnClickListener(this);
         boton3 = (Button)findViewById(R.id.button3);
         boton3.setOnClickListener(this);
-        boton4 = (Button)findViewById(R.id.button4);
-        boton4.setOnClickListener(this);
     }
 
 
@@ -95,10 +93,8 @@ public class PrincipalActivity extends Activity implements View.OnClickListener 
                 startActivity(intent);
 
                 break;
-            case R.id.button4:
 
 
-                break;
 
 
 
