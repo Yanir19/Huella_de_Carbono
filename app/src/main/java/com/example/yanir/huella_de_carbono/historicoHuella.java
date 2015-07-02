@@ -25,8 +25,8 @@ public class historicoHuella extends Activity implements View.OnClickListener {
     private int[] tiposDePaticas = {R.drawable.ic_huella_verde,R.drawable.ic_huella_amarilla,R.drawable.ic_huella_naranja,R.drawable.ic_huella_negra,R.drawable.ic_huella_roja};
     private LinearLayout imagenesHorizontales;
     private ArrayList<Patica> paticas;
-    private Cursor result;
-    private Manejador_BD BD;
+
+    private static Manejador_BD BD;
     TextView tv_tips;
     ImageView iv_patica;
 
@@ -45,7 +45,7 @@ public class historicoHuella extends Activity implements View.OnClickListener {
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"DK Crayon Crumble.ttf");
         tv_tips = (TextView) findViewById(R.id.textview_tips);
         tv_tips.setTypeface(myTypeface);
-        BD = new Manejador_BD(historicoHuella.this);
+
 
     }
 
@@ -123,14 +123,19 @@ public class historicoHuella extends Activity implements View.OnClickListener {
         String mensaje;
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-        result = BD.Get_BD("SELECT * FROM Resultado_de_emision ;");
+        Cursor result;
+        BD = new Manejador_BD(historicoHuella.this);
 
+        result = BD.Get_BD("SELECT * FROM Resultado_de_emision ");
+
+
+        
         if (result.moveToFirst()) {
             //Recorremos el cursor hasta que no haya más registros
             do {
-                resultado = (result.getDouble(0));
-                fecha = sdf.format(result.getString(1));
-                mensaje = result.getString(2);
+                resultado = (result.getDouble(1));
+                fecha = result.getString(2);
+                mensaje = result.getString(3);
 
                 if(resultado <=6*30){
                     j=tiposDePaticas[0];
@@ -153,7 +158,7 @@ public class historicoHuella extends Activity implements View.OnClickListener {
                     j=tiposDePaticas[3];
                 }
 
-                paticasArray.add(new Patica(new ImageView(this),j,this,i,fecha+"\n"+mensaje));
+               paticasArray.add(new Patica(new ImageView(this),j,this,i,fecha+"\n"+mensaje));
 
 
 
@@ -162,6 +167,7 @@ public class historicoHuella extends Activity implements View.OnClickListener {
                 i++;
             } while(result.moveToNext());
         }
+
 
     }
 

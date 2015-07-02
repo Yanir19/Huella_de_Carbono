@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class BdHelper extends SQLiteOpenHelper {
 
-    private static final String Nombre_BD = "Tooca.sqlite";
+    private static final String Nombre_BD = "Huella_de_carbono.sqlite";
     private static final int BD_VERSION_ESQUEMA = 1;
 
     public BdHelper(Context context) {
