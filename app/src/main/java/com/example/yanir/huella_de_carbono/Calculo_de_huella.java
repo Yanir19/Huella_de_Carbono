@@ -23,6 +23,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Vector;
 
 /**
@@ -495,6 +497,19 @@ public void consumo_hogar_activity (View v){
         for(int i=0; i<tips_paticas.size();i++){
             mensaje.setText(mensaje.getText()+tips_paticas.get(i)+"\n");
         }
+
+
+        //YA esta el resultado completo
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date fecha = new Date();
+        String currentDateandTime = sdf.format(fecha);
+
+
+
+        BD.Push_BD("INSERT INTO Resultado_de_emision (resultado,fecha,mensaje)  VALUES('"+resultado_final+"','"+currentDateandTime+"','"+mensaje.getText()+"');");
+
+
 
     };
 

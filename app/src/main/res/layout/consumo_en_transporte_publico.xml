@@ -31,7 +31,7 @@
                 android:id="@+id/botoncasaenbus"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/ic_casita" />
+                android:background="@drawable/ic_carrogrande" />
         </RelativeLayout>
 
         <RelativeLayout

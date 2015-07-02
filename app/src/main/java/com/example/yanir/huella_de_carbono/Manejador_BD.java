@@ -26,10 +26,13 @@ public class Manejador_BD {
                 "  `co2` FLOAT(11) NOT NULL ); " ;
 
         public static final  String Resultado_de_emision =  "CREATE TABLE Resultado_de_emision ( " +
-                "  `_idResultados` INTEGER  PRIMARY KEY AUTOINCREMENT  NOT NULL, " +
-                "  `resultado` VARCHAR(45) NOT NULL); "  ;
+                "   `_idResultados` INTEGER  PRIMARY KEY AUTOINCREMENT  NOT NULL, " +
+                "   `resultado` DOUBLE NOT NULL, " +
+                "   'fecha' DATE NOT NULL, " +
+                "   'mensaje' VARCHAR(100) NOT NULL); " ;
 
-        public static final  String _idSabias_que = " CREATE TABLE  _idSabias_que  ( " +
+
+    public static final  String _idSabias_que = " CREATE TABLE  _idSabias_que  ( " +
                 "  `_idSabias_que` INTEGER PRIMARY KEY  AUTOINCREMENT NOT NULL, " +
                 "  `Tipo` VARCHAR(45) NOT NULL, " +
                 "  `Mensaje` VARCHAR(45) NOT NULL); ";
